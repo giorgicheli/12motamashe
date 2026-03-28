@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ka">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>მე-12 მოთამაშე - ადმინი</title>
+    <link rel="stylesheet" href="admin-styles.css" />
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+</head>
+
+<body>
+    <div class="admin-wrapper">
+        <!-- HEADER -->
+        <header class="admin-header">
+            <div class="header-content">
+                <div class="header-text">
+                    <!-- <span class="header-line">ამბასადორი ბეთი</span>
+                    <span class="header-line2">ადმინ პანელი</span> -->
+                </div>
+            </div>
+        </header>
+
+        <!-- NAVIGATION -->
+        <nav class="admin-nav">
+            <a style="display: none;" href="index.html" class="nav-btn">← მთავარი გვერდი</a>
+            <button style="display: none;" id="reset-btn" class="nav-btn danger">ქულების გადატვირთვა</button>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <main class="admin-container">
+            <div class="admin-header-section">
+                <h1>გუნდების ქულების მართვა</h1>
+                <div class="admin-stats">
+                    <span id="total-teams">სულ გუნდები: 20</span>
+                    <span id="last-update">ბოლო განახლება: -</span>
+                </div>
+            </div>
+
+            <!-- SEARCH AND FILTER -->
+            <div class="admin-controls">
+                <input type="text" id="search-input" placeholder="გუნდის ძებნა..." />
+                <select id="sort-select">
+                    <option value="name">სახელის მიხედვით</option>
+                    <option value="score">ქულის მიხედვით</option>
+                    <option style="display: none;" value="id">ID-ს მიხედვით</option>
+                </select>
+                <button id="save-all-btn" class="save-btn">ყველას შენახვა</button>
+                <button id="reset-all-btn" class="danger save-btn">ყველას გაწმენდა</button>
+                <button id="toggle-logs-btn" class="save-btn secondary">ისტორია</button>
+                <button id="toggle-deleted-btn" class="save-btn secondary">წაშლილები</button>
+            </div>
+
+            <!-- SCORE CHANGE LOGS -->
+            <section id="logs-container" class="logs-container" style="display: none;">
+                <div class="logs-header">
+                    <h3>ქულების ცვლილების ისტორია</h3>
+                    <div class="logs-actions">
+                        <button id="clear-logs-btn" class="danger">ისტორიის გასუფთავება</button>
+                    </div>
+                </div>
+                <div id="logs-list" class="logs-list">
+                    <!-- Logs populated by JS -->
+                </div>
+            </section>
+
+            <!-- DELETED TEAMS -->
+            <section id="deleted-container" class="logs-container" style="display: none;">
+                <div class="logs-header">
+                    <h3>წაშლილი გუნდები</h3>
+                    <div class="logs-actions">
+                        <button id="restore-all-deleted-btn" class="save-btn">ყველას აღდგენა</button>
+                        <button id="clear-deleted-btn" class="danger">გასუფთავება</button>
+                    </div>
+                </div>
+                <div id="deleted-list" class="logs-list">
+                    <!-- Deleted teams populated by JS -->
+                </div>
+            </section>
+
+            <!-- TEAMS LIST -->
+            <div class="teams-container">
+                <div class="teams-header">
+                    <span>გუნდი</span>
+                    <span>ქულა</span>
+                    <span>მოქმედებები</span>
+                </div>
+                <div id="teams-list" class="teams-list">
+                    <!-- Teams will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- BULK ACTIONS -->
+            <div class="bulk-actions">
+                <h3>ჯგუფური მოქმედებები</h3>
+                <div class="bulk-controls">
+                    <input type="number" id="bulk-score" placeholder="ქულა" min="0" />
+                    <button id="add-all-btn">ყველას დამატება</button>
+                    <button style="display: none;" id="set-all-btn">ყველასთვის დაყენება</button>
+                    <button id="reset-all-btn" class="danger">ყველას გაწმენდა</button>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="admin-script.js"></script>
+</body>
+
+</html>

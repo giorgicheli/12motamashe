@@ -1,0 +1,419 @@
+@font-face {
+  font-family: "Noto Sans Ambassadori";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://usernamenotavailable12.github.io/Font-Repository/NotoSansAmbassadori-Regular.ttf);
+}
+@font-face {
+  font-family: "Noto Sans Ambassadori";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://usernamenotavailable12.github.io/Font-Repository/NotoSansAmbassadori-Regular.ttf);
+}
+@font-face {
+  font-family: "Noto Sans Ambassadori Slim";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://usernamenotavailable12.github.io/Font-Repository/NotoSansAmbassadori-Regular.ttf);
+}
+@font-face {
+  font-family: "Noto Sans Ambassadori Slim";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://usernamenotavailable12.github.io/Font-Repository/NotoSansAmbassadori-Regular.ttf);
+}
+@font-face {
+  font-family: "Noto Sans Ambassadori Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://usernamenotavailable12.github.io/Font-Repository/NotoSansAmbassadori-Bold.ttf);
+}
+@font-face {
+  font-family: "Noto Sans Ambassadori Bold";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://usernamenotavailable12.github.io/Font-Repository/NotoSansAmbassadori-Bold.ttf);
+}
+
+
+:root {
+  --font-family: "Noto Sans Ambassadori";
+  --text-color: #ffffff;
+  --header-color: linear-gradient(90deg, rgba(197, 12, 232, 0.50) 0%, rgba(1, 4, 45, 0.50) 50%, rgba(87, 32, 205, 0.50) 100%);
+  --accent-color: #cf167d;
+  --dark-separator-color: #0F2129;
+  --row-border-color: rgba(207, 22, 125, 0.25);
+}
+
+body {
+  margin: 0;
+  background: #000;
+  color: var(--text-color);
+  font-family: var(--font-family);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.leaderboard-header {
+background-image: url(/12-player-scoreboard-main/assets/bg-image.PNG);
+background-position: center;
+background-repeat: no-repeat;
+background-size: contain;
+width: 100%;
+height: 200px;
+}
+
+.leaderboard-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, rgba(197, 12, 232, 1) 0%, rgba(1, 4, 45, 1) 50%, rgba(87, 32, 205, 1) 100%);
+  z-index: 1;
+}
+
+.header-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+  max-width: none;
+  padding: 0 20px;
+}
+
+.ball {
+  position: absolute;
+  z-index: 0;
+}
+
+.ball1 {
+  top: -30px;
+  right: -50px;
+  width: 246px;
+  height: 247px;
+}
+
+.ball2 {
+  top: 10px;
+  left: 100px;
+  width: 93px;
+  height: 93px;
+}
+
+.ball3 {
+  bottom: 0;
+  left: 0;
+  width: 156px;
+  height: 156px;
+}
+
+.mascot {
+  width: 250px;
+  height: auto;
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  width: fit-content;
+}
+
+.header-line {
+  color: var(--text-color);
+  font-size: 54px;
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.28px;
+  text-transform: uppercase;
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.header-line2{
+  color: var(--text-color);
+  font-size: 80px;
+  font-family: var(--font-family);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.28px;
+  text-transform: uppercase;
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.header-line + .header-line2 {
+  margin-top: 3px;
+}
+
+.leaderboard-container {
+  width: 100vw; 
+  margin: 0; 
+  padding: 0; 
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; 
+  z-index: 1;
+}
+
+
+.leaderboard-columns {
+  display: flex;
+  justify-content: space-between; 
+  gap: 0; 
+  flex-wrap: wrap;
+  padding: 0; 
+  max-width: 100%; 
+  width: 100%;
+  align-items: flex-start;
+  padding-top: 10px;
+}
+
+.leaderboard-column {
+  flex: 1;
+  min-width: 0; 
+}
+
+.leaderboard-list {
+  border-radius: 0; 
+  overflow: hidden;
+  padding: 0; 
+  width: 100%; 
+}
+
+.leaderboard-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 60px;
+  align-items: center;
+  padding: 10px 16px; 
+  background: #000;
+  border-bottom: 1px solid var(--row-border-color);
+  transition: all 0.5s ease;
+}
+
+.leaderboard-row:hover {
+  background: rgba(207, 22, 125, 0.05);
+}
+
+.leaderboard-row span:first-child {
+  text-align: center;
+}
+
+.leaderboard-row span:last-child {
+  text-align: left;
+  font-weight: 600;
+}
+
+.save {
+  position: relative;  
+  margin: 20px auto 0 auto;  
+  text-align: right; 
+  width: 100%;  
+  z-index: 10;
+}
+
+#save-btn {
+  padding: 12px 40px;
+  background: #1DB409;
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#save-btn:hover {
+  background: #1DB409;
+  transform: scale(1.05);
+}
+
+#update-btn {
+  padding: 12px 30px;
+  background: #ffc107;
+  color: #000;
+  border: none;
+  border-radius: 9999px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-right: 10px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+#update-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+}
+
+#update-btn.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 193, 7, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 193, 7, 0);
+  }
+}
+
+.team-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.team-logo {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.team-name {
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.team-score {
+  font-weight: 600;
+  font-size: 25px;
+  text-align: right;
+}
+
+
+
+@media (max-width: 768px) {
+  
+  .header-content {
+    flex-wrap: nowrap; 
+    justify-content: flex-start; 
+    gap: 10px; 
+  }
+
+  .mascot {
+    width: 80px; 
+    height: auto;
+  }
+
+  .header-text {
+    flex: 1; 
+    align-items: flex-start;
+  }
+
+  .ball {
+    display: none !important;
+  }
+
+  .mascot {
+    width: 120px;
+  }
+
+  .header-line {
+    font-size: 20px;
+    letter-spacing: -0.15px;
+  }
+
+  .header-line2 {
+    font-size: 30px;
+    letter-spacing: -0.15px;
+  }
+
+  .header-line + .header-line2 {
+    margin-top: 1px;
+  }
+
+  .leaderboard-container {
+    margin: 0;
+    padding: 0;
+  }
+
+  .leaderboard-columns {
+    flex-direction: column;
+    gap: 5px;
+    padding: 0;
+  }
+
+  .leaderboard-column {
+    min-width: 100%;
+    width: 100%;
+    padding: 0;
+  }
+  
+  .leaderboard-list {
+    padding: 0;
+  }
+
+
+  .leaderboard-row {
+    grid-template-columns: 45px 1fr 50px;
+    padding: 10px 15px;
+  }
+
+  .team-info {
+    gap: 8px;
+  }
+
+  .team-logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .team-name {
+    font-size: 12px;
+  }
+
+  .team-score {
+    font-size: 14px;
+  }
+  
+  .save {
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  #save-btn {
+    padding: 10px 30px;
+  }
+}
